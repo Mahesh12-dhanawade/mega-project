@@ -1,6 +1,6 @@
 const { superProduct } = require("../models/super_products");
 const express = require("express");
-const { find } = require("../models/user");
+// const { find } = require("../models/user");
 const router = express.Router();
 
 router.post(`/`, async(req,res) => {

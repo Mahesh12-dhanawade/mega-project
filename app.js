@@ -20,18 +20,20 @@ app.use(morgan('tiny'));
 const categoryRoutes = require('./routes/categories')
 const superProductsRoutes = require('./routes/super_products')
 const productsRoutes = require('./routes/products');
-const usersRoutes = require('./routes/users');
+// const usersRoutes = require('./routes/users');
 const ordersRoutes = require('./routes/orders');
 const shopRoutes = require('./routes/shop')
+const userRoutes = require('./routes/userRoutes')
 
 const api = process.env.API_URL;
 
 app.use(`${api}/category`, categoryRoutes);
 app.use(`${api}/super_products`, superProductsRoutes);
 app.use(`${api}/products`, productsRoutes);
-app.use(`${api}/users`, usersRoutes);
+app.use(`${api}/user`, userRoutes);
 app.use(`${api}/orders`, ordersRoutes);
 app.use(`${api}/shop`, shopRoutes);
+
 
 //Database
 mongoose.connect(process.env.CONNECTION_STRING, {
