@@ -23,19 +23,17 @@ router.get('/:id', async(req,res)=>{
 })
 
 
-// http://localhost:3000/api/v1/categories
+// http://localhost:3000/api/categories
 router.post('/', async (req,res)=>{
     let category = new Category({
-        name: req.body.name,
-        icon: req.body.icon,
-        color: req.body.color
-    })
-    category = await category.save();
+      category_name: req.body.category_name,
+    });
+    const result = await category.save();
 
-    if(!category)
+    if(!result)
     return res.status(400).send('the category cannot be created!')
 
-    res.send(category);
+    res.send(result);
 })
 
 // http://localhost:3000/api/v1/categories/635b8ce94fa6d861d3e2c827
